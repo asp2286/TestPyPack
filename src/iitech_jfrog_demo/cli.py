@@ -17,6 +17,10 @@ def _safe_version(dist_name: str, fallback: str) -> str:
         return fallback
 
 
+def _module_version(module: object, dist_name: str) -> str:
+    return getattr(module, "__version__", _safe_version(dist_name, "unknown"))
+
+
 def main() -> None:
     """Print package, Python, and dependency versions."""
     import dateutil
@@ -28,7 +32,7 @@ def main() -> None:
 
     print(f"{_DISTRIBUTION} version: {resolved_pkg_version}")
     print(f"Python version: {platform.python_version()}")
-    print(f"requests version: {requests.__version__}")
-    print(f"pydantic version: {pydantic.__version__}")
-    print(f"python-dateutil version: {dateutil.__version__}")
-    print(f"rich version: {rich.__version__}")
+    print(f"requests version: {_module_version(requests, 'requests')}")
+    print(f"pydantic version: {_module_version(pydantic, 'pydantic')}")
+    print(f"python-dateutil version: {_module_version(dateutil, 'python-dateutil')}")
+    print(f"rich version: {_module_version(rich, 'rich')}")
