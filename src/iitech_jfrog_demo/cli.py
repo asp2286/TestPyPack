@@ -3,11 +3,9 @@
 from __future__ import annotations
 
 import platform
-
 from importlib.metadata import PackageNotFoundError, version
 
 from . import __version__ as package_version
-
 
 _DISTRIBUTION = "iitech-jfrog-multipypi-demo"
 
