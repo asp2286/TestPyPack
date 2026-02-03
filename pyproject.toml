@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "iitech-jfrog-multipypi-demo"
-version = "0.0.0"
+version = "1.0.1"
 description = "Demo package for publishing to JFrog Artifactory and installing via a Virtual PyPI repository."
 readme = "README.md"
 license = { text = "MIT" }
